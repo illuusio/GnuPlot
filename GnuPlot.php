@@ -10,6 +10,7 @@ class GnuPlot {
 	const TERMINAL_PNG	= 'png';
 	const TERMINAL_PDF	= 'pdf';
 	const TERMINAL_EPS	= 'eps';
+	const TERMINAL_SVG	= 'svg';
 	
     // Values as an array
     protected $values = array();
