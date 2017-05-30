@@ -284,11 +284,15 @@ class GnuPlot {
         $timeout = 100;
         do {
             stream_set_blocking($this->stdout, false);
-            $data = fread($this->stdout, 128);
+            $data = fread($this->stdout, 512);
             $result .= $data;
-            usleep(5000);
-            $timeout-=5;
-        } while ($timeout>0 || $data);
+            usleep($this->sleepTime);
+            if(strlen($data) == 0) {
+               $timeout-=5;
+            } else {
+               $timeout = 100;
+            }
+         } while ($timeout>0 || $data);
 
         return $result;
     }
