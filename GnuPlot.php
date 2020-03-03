@@ -595,7 +595,7 @@ class GnuPlot
     {
         $this->sendCommand('set grid');
         $this->sendCommand('set terminal dumb');
-    
+
         $gridCommand = 'set grid xtics ytics';
         if (true === $this->minorGrid) {
             $gridCommand .= ' mxtics mytics';
